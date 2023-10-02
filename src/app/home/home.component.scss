@@ -3,9 +3,118 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 40px 150px;
+    height: 100vh;
 
-    button {
-        width: 300px;
+    .hero-img {
+        opacity: 0.5;
+        position: absolute;
+        z-index: -1;
+        max-width: 1280px;
+        border-radius: 15px;
+        height: 90%;
+
+        @media screen and (min-width: 1200px) {
+            width: 1280px;
+            height: 80%;
+        }
+
+        @media screen and (max-width: 1200px) {
+            height: 100%;
+        }
+    }
+
+    .hero-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        .hero-text {
+            color: rgb(25, 25, 25);
+            font-weight: 800;
+            line-height: 56px;
+            font-size: 56px;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+
+            .line-break {
+                display: none;
+
+                @media screen and (min-width: 992px) {
+                    display: block;
+                }
+            }
+        }
+
+        button {
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(25, 25, 25);
+            padding: 1em 2em;
+            border: none;
+            border-radius: .6rem;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            margin-top: 2.5rem;
+            
+            span:not(:nth-child(6)) {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                height: 30px;
+                width: 30px;
+                background-color: rgb(255, 115, 0);
+                border-radius: 50%;
+                transition: .6s ease;
+            }
+              
+            span:nth-child(6) {
+                position: relative;
+            }
+              
+            span:nth-child(1) {
+                transform: translate(-3.3em, -4em);
+            }
+              
+            span:nth-child(2) {
+                transform: translate(-6em, 1.3em);
+            }
+              
+            span:nth-child(3) {
+                transform: translate(-.2em, 1.8em);
+            }
+              
+            span:nth-child(4) {
+                transform: translate(3.5em, 1.6em);
+            }
+              
+            span:nth-child(5) {
+                transform: translate(3.5em, -3.8em);
+            }
+              
+            &:hover span:not(:nth-child(6)) {
+                transform: translate(-50%, -50%) scale(4);
+                transition: 1.5s ease;
+            }
+        }
+    }
+}
+
+.container {
+    padding: 0 180px;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 30px;
+    }
+
+    @media (min-width: 768px) and (max-width: 992px) {
+        padding: 0 80px;
+    }
+
+    @media (min-width: 992px) and (max-width: 1200px) {
+        padding: 0 120px;
     }
 }

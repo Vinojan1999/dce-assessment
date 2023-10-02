@@ -11,6 +11,10 @@ export class TaskService {
   constructor(private http: HttpClient) { }
 
   getAllUsers() {
-    return this.http.get(`https://reqres.in/api/users`);
+    return this.http.get(`${this.baseUrl}/users`);
+  }
+
+  createUser(user: any) {
+    return this.http.post(`${this.baseUrl}/users`, user);
   }
 }
