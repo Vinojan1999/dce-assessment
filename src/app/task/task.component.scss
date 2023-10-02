@@ -1,0 +1,17 @@
+.task-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    .table-container {
+        width: 70%;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+}
