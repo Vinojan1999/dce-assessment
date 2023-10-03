@@ -31,11 +31,11 @@
 
         .hero-text {
             color: rgb(25, 25, 25);
-            font-weight: 800;
+            font-weight: 700;
             line-height: 56px;
             font-size: 56px;
             text-align: center;
-            font-family: 'Inter', sans-serif;
+            font-family: Inter;
 
             .line-break {
                 display: none;
@@ -49,6 +49,7 @@
         button {
             font-weight: bold;
             font-size: 16px;
+            font-family: Inter;
             color: white;
             background-color: rgb(25, 25, 25);
             padding: 1em 2em;
