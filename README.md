@@ -1,6 +1,16 @@
-# DceAssessment
+# Assessment Test for Associate Software Engineer at Data Capture Expert
+
+![Landing Page](https://github.com/Vinojan1999/dce-assessment/assets/48822560/9ec9792e-41fb-44bd-a681-e06f683d4e29)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+
+### Key Features
+-   Interactive User Interface.
+-   Used [REQRES](https://reqres.in/) APIs.
+-   User Registration UI, Using CREATE endpoint.
+-   Update user UI, using UPDATE endpoint.
+-   Display registered user UI, using GET endpoint.
+-   Delete user function, using DELETE endpoint.
 
 ## Development server
 
