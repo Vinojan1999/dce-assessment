@@ -1,0 +1,36 @@
+<form class="dialog-form" [formGroup]="myForm" (ngSubmit)="saveUser()">
+    <h1 mat-dialog-title>{{ inputData.title }}</h1>
+
+    <div class="input-section">
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label class="label">First Name</mat-label>
+            <input matInput id="firstName" required formControlName="first_name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label class="label">Last Name</mat-label>
+            <input matInput id="lastName" required formControlName="last_name">
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label class="label">Email</mat-label>
+            <input matInput type="email" id="email" required formControlName="email">
+        </mat-form-field>
+        
+        <!-- <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Choose file</mat-label>
+            <input matInput type="file" id="file" required formControlName="avatar" (change)="handleFileInput($event?.target?.files)">
+        </mat-form-field> -->
+    </div>
+  
+    <div class="btn-section">
+        <button type="button" (click)="closePopUp()" mat-button color="warn">Close</button>
+        <button class="create-update-btn" *ngIf="checkType" type="submit" mat-raised-button>
+            <span>Create</span>
+        </button>
+        <button class="create-update-btn" *ngIf="!checkType" type="button" (click)="updateUser(inputData.id)" mat-raised-button>
+            <span>Update</span>
+        </button>
+    </div>
+</form>
+  
