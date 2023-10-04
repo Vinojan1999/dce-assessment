@@ -38,6 +38,19 @@ export class TaskComponent implements OnInit {
       this.dataSource = data.data;
       console.log("Users:",this.dataSource);
     });
+    // this.taskService.getAllUsers().subscribe(
+    //   (data: any) => {
+    //     if (data && data.data && Array.isArray(data.data)) {
+    //       this.dataSource = data.data;
+    //       console.log("Users:", this.dataSource);
+    //     } else {
+    //       console.error("Invalid data format:", data);
+    //     }
+    //   },
+    //   (error: any) => {
+    //     console.error("Error fetching users:", error);
+    //   }
+    // );
   }
 
   addUser(){
