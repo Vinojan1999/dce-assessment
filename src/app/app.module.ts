@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -34,6 +35,7 @@ import { CreateEditUserComponent } from './component/create-edit-user/create-edi
     MatDialogModule,
     MatButtonModule,
     MatTableModule,
+    MatPaginatorModule,
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,

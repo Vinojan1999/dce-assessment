@@ -5,6 +5,15 @@
     align-items: center;
     height: 100%;
 
+    .mat-elevation-z8 {
+        border-radius: 10px !important;
+        padding: 10px;
+        box-shadow: none;
+        background: #f7f7f7;
+        background: linear-gradient(#f7f7f7, #f7f7f7) padding-box, linear-gradient(90deg, rgb(253, 29, 29) 0, rgb(252, 176, 69) 100%) border-box;
+        border: 2px solid transparent;
+    }
+
     .header {
         display: flex;
         flex-direction: row;
@@ -18,6 +27,13 @@
             font-weight: 600;
             font-size: 26px;
             margin: 0;
+            background-image: linear-gradient(30deg, rgb(253, 29, 29), rgb(252, 176, 69));
+            background-clip: text;
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
         }
 
         .add-btn {
@@ -55,6 +71,11 @@
                 }
             }   
         }
+    }
+
+    th {
+        font-size: 16px;
+        font-weight: 600;
     }
 
     th, td {

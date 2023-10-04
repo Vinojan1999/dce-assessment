@@ -1,22 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TaskService } from './task.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CreateEditUserComponent } from '../component/create-edit-user/create-edit-user.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: ['./task.component.scss']
+  styleUrls: ['./task.component.scss'],
 })
 export class TaskComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'f_name', 'l_name', 'email', 'img', 'actions'];
 
-  dataSource: any;
+  dataSource!: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngOnInit(): void {
     this.fetchUsers();
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
   }
 
   constructor(
