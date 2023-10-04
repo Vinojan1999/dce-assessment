@@ -28,7 +28,7 @@ export class TaskComponent implements OnInit {
   fetchUsers() {
     this.taskService.getAllUsers().subscribe((data: any) => {
       this.dataSource = data.data;
-      console.log("DATA",this.dataSource);
+      console.log("Users:",this.dataSource);
     });
   }
 
@@ -51,19 +51,18 @@ export class TaskComponent implements OnInit {
     })
     popUp.afterClosed().subscribe({
       next: (response)=>{
-        console.log(response);
+        // console.log(response);
         this.ngOnInit();
       }
     })
   }
 
   deleteUser(id:any){
-    this.taskService.deleteUser(id).subscribe({
-      next: (response)=>{
-        window.location.reload();
-        this.router.navigate(['/']);
-        console.log(response);
+    this.taskService.deleteUser(id).subscribe(
+      response => {
+        console.log("Status:", response.status);
+        console.log("Response:", response)
       }
-    })
+    )
   }
 }

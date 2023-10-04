@@ -25,8 +25,6 @@ export class CreateEditUserComponent implements OnInit{
 
   ngOnInit(): void {
     this.inputData=this.data;
-    console.log("Herewds",this.inputData);
-    console.log("Here",this.inputData.id.id);
     
     this.checkType=this.inputData.checkType;
 
@@ -55,28 +53,28 @@ export class CreateEditUserComponent implements OnInit{
   })
 
   saveUser(){
-    console.log(this.myForm.value);
+    // console.log(this.myForm.value);
     this.taskService.createUser(this.myForm.value).subscribe(
-      res=> {
-        console.log(res);
+      response => {
+        console.log("Status:", response.status);
+        console.log("Response:", response.body);
         this.closePopUp();
       }
     )
   }
 
   updateUser(id:any){
-    this.taskService.editUser(id,this.myForm.value).subscribe({
-      next: (res)=>{
+    this.taskService.editUser(id,this.myForm.value).subscribe(
+      response =>{
+        console.log("Status:", response.status);
+        console.log("Response:", response.body);
         this.closePopUp();
       }
-    }
     )
   }
 
   setUpData(id:any) {
-    this.taskService.getUser(id).subscribe(item=>{
-      console.log(item.data);
-      console.log(item.data.first_name);
+    this.taskService.getUser(id).subscribe(item => {
       this.editData=item.data;
       this.myForm.setValue({
         first_name:this.editData.first_name,

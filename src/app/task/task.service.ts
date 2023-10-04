@@ -16,19 +16,17 @@ export class TaskService {
   }
 
   createUser(user: any) {
-    console.log(user);
-    return this.http.post(`${this.baseUrl}/users`, user);
+    return this.http.post(`${this.baseUrl}/users`, user, {observe: 'response'});
   }
 
   editUser(userId: number, userData: any): Observable<any> {
-    console.log(userData);
     const url = `${this.baseUrl}/users/${userId}`;
-    return this.http.put(url, userData);
+    return this.http.put(url, userData, {observe: 'response'});
   }
 
   deleteUser(userId: number): Observable<any> {
     const url = `${this.baseUrl}/users/${userId}`;
-    return this.http.delete(url);
+    return this.http.delete(url, {observe: 'response'});
   }
 
   getUser(userId: number): Observable<any> {
