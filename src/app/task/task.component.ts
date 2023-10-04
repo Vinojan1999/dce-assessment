@@ -50,7 +50,7 @@ export class TaskComponent implements OnInit {
 
   openAddUser(id:any,title:any,checkType:any){
     var popUp = this.dialog.open(CreateEditUserComponent,{
-      width:'30%',
+      width:'600px',
       data:{
         title:title,
         id:id,
