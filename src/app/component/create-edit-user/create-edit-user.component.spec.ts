@@ -58,7 +58,7 @@ describe('CreateEditUserComponent', () => {
       first_name: 'Vinojan',
       last_name: 'Abhimanyu',
       email: 'vinojan02abhimanyu@gmail.com',
-      avatar: '',
+      // avatar: '',
     });
   
     component.saveUser();
@@ -71,7 +71,7 @@ describe('CreateEditUserComponent', () => {
       last_name: 'Abhimanyu',
       email: 'vinojan02abhimanyu@gmail.com',
       id: '214',
-      avatar: '',
+      // avatar: '',
       createdAt: '2023-10-04T20:19:20.845Z',
     };
   
@@ -81,7 +81,7 @@ describe('CreateEditUserComponent', () => {
       first_name: 'Vinojan',
       last_name: 'Abhimanyu',
       email: 'vinojan02abhimanyu@gmail.com',
-      avatar: '',
+      // avatar: '',
     });
   
     httpTestingController.verify();
@@ -96,7 +96,7 @@ describe('CreateEditUserComponent', () => {
       first_name: 'Vinojan',
       last_name: 'Abhimanyu',
       email: 'vinojan02abhimanyu@gmail.com',
-      avatar: 'https://reqres.in/img/faces/1-image.jpg',
+      // avatar: 'https://reqres.in/img/faces/1-image.jpg',
     });
   
     component.updateUser(123);
@@ -108,7 +108,7 @@ describe('CreateEditUserComponent', () => {
       first_name: 'Vinojan',
       last_name: 'Abhimanyu',
       email: 'vinojan02abhimanyu@gmail.com',
-      avatar: 'https://reqres.in/img/faces/1-image.jpg',
+      // avatar: 'https://reqres.in/img/faces/1-image.jpg',
       updatedAt: '2023-10-04T20:06:40.775Z',
     };
   
@@ -118,7 +118,7 @@ describe('CreateEditUserComponent', () => {
       first_name: 'Vinojan',
       last_name: 'Abhimanyu',
       email: 'vinojan02abhimanyu@gmail.com',
-      avatar: 'https://reqres.in/img/faces/1-image.jpg',
+      // avatar: 'https://reqres.in/img/faces/1-image.jpg',
     });
   
     httpTestingController.verify();

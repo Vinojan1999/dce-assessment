@@ -15,7 +15,7 @@ export class TaskComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'f_name', 'l_name', 'email', 'img', 'actions'];
 
-  dataSource!: MatTableDataSource<any>;
+  dataSource: string[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -23,9 +23,9 @@ export class TaskComponent implements OnInit {
     this.fetchUsers();
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
-  }
+  // ngAfterViewInit(): void {
+  //   this.dataSource.paginator = this.paginator;
+  // }
 
   constructor(
     private taskService: TaskService,
@@ -38,19 +38,6 @@ export class TaskComponent implements OnInit {
       this.dataSource = data.data;
       console.log("Users:",this.dataSource);
     });
-    // this.taskService.getAllUsers().subscribe(
-    //   (data: any) => {
-    //     if (data && data.data && Array.isArray(data.data)) {
-    //       this.dataSource = data.data;
-    //       console.log("Users:", this.dataSource);
-    //     } else {
-    //       console.error("Invalid data format:", data);
-    //     }
-    //   },
-    //   (error: any) => {
-    //     console.error("Error fetching users:", error);
-    //   }
-    // );
   }
 
   addUser(){

@@ -16,6 +16,12 @@
             <mat-label class="label">Email</mat-label>
             <input matInput type="email" id="email" required formControlName="email">
         </mat-form-field>
+
+        <!-- <div *ngIf="myForm.controls['email'].invalid && (myForm.controls['email'].dirty || myForm.controls['email'].touched)" class="alert">
+            <div *ngIf="myForm.controls['email'].errors.required">
+                Email is Invalid
+            </div>
+        </div> -->
     
     </div>
   

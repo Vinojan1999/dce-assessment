@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject,ViewChild, ElementRef } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TaskService } from 'src/app/task/task.service';
 
@@ -33,13 +33,13 @@ export class CreateEditUserComponent implements OnInit{
     }
   }
 
-  handleFileInput(files: FileList | null): void {
-    if (files && files.length > 0) {
-      const selectedFile = files[0];
-      this.selectedFileName = selectedFile.name;
-      // Handle the selected file
-    }
-  }
+  // handleFileInput(files: FileList | null): void {
+  //   if (files && files.length > 0) {
+  //     const selectedFile = files[0];
+  //     this.selectedFileName = selectedFile.name;
+  //     // Handle the selected file
+  //   }
+  // }
 
   closePopUp(){
     this.ref.close("close");
@@ -48,8 +48,9 @@ export class CreateEditUserComponent implements OnInit{
   myForm=this.builder.group({
     first_name:this.builder.control(''),
     last_name:this.builder.control(''),
-    email:this.builder.control(''),
-    avatar: this.builder.control(''),
+    // email:this.builder.control(''),
+    email: [this.builder.control(''), Validators.required ]
+    // avatar: this.builder.control(''),
   })
 
   saveUser(){
@@ -80,7 +81,7 @@ export class CreateEditUserComponent implements OnInit{
         first_name:this.editData.first_name,
         last_name:this.editData.last_name,
         email:this.editData.email,
-        avatar: this.editData.avatar,
+        // avatar: this.editData.avatar,
       })
     })
   }
